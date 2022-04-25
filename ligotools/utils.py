@@ -1,6 +1,12 @@
 import numpy as np
-from scipy.io import wavfile
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import matplotlib.mlab as mlab
+from scipy import signal
+from scipy.io import wavfile
+from scipy.interpolate import interp1d
+from scipy.signal import butter, filtfilt, iirdesign, zpk2tf, freqz
 
 # function to whiten data
 def whiten(strain, interp_psd, dt):
