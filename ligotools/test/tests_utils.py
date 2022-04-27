@@ -32,3 +32,7 @@ def test_reqshift():
 	strain_H1_whiten = ut.whiten(strain_H1,psd_H1,dt)
 	strain_H1_shifted = ut.reqshift(strain_H1_whiten,fshift=400,sample_rate=4096)
 	assert assert len(strain_H1_whiten) == 131072 
+
+def test_plot():
+    img = plt.imread('/home/jovyan/Homework/hw06-midoripierce/figures/GW150914_L1_matchfreq.png')
+    assert img is not None
